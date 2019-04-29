@@ -17,8 +17,11 @@ class CriarTabelaUsuario extends Migration
             $table->bigIncrements('id');
             $table->string('nome_pessoal');
             $table->string('nome_usuario')->unique();
-            $table->boolean('ativo');
-            $table->string('senha');
+            $table->boolean('ativo')->default(1);
+            $table->string('password');
+            $table->string('email');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

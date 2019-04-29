@@ -15,8 +15,8 @@ class CriarTabelaCategoria extends Migration
     {
         Schema::create('categoria', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
-            $table->boolean('ativo');
+            $table->string('nome',100);
+            $table->boolean('ativo')->default(1);
             $table->timestamps();
         });
     }

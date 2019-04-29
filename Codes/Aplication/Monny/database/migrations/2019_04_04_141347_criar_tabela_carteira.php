@@ -15,14 +15,16 @@ class CriarTabelaCarteira extends Migration
     {
         Schema::create('carteira', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
+            $table->string('nome',100);
             $table->string('descricao');
-            $table->boolean('ativo');
+            $table->boolean('ativo')->default(1);
             $table->timestamps();
 
             $table->unsignedBigInteger('carteira_mestre_id')->nullable()->default(NULL);
+            $table->unsignedBigInteger('usuario_id');
             
             $table->foreign('carteira_mestre_id')->references('id')->on('carteira')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('usuario_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

@@ -15,7 +15,7 @@ class CriarTabelaAgendamentoFixo extends Migration
     {
         Schema::create('agendamento_fixo', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->boolean('ativo');
+            $table->boolean('ativo')->default(1);
             $table->timestamps();
 
             $table->unsignedBigInteger('agendamento_financeiro_id');

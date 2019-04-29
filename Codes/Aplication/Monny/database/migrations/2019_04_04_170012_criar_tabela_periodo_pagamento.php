@@ -15,9 +15,9 @@ class CriarTabelaPeriodoPagamento extends Migration
     {
         Schema::create('periodo_pagamento', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->boolean('ativo');
-            $table->string('nome');
-            $table->integer('numero_parcelas');
+            $table->boolean('ativo')->default(1);
+            $table->string('nome',100);
+            $table->integer('numero_parcelas')->default(1);
             $table->timestamps();
         });
     }

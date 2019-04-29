@@ -15,15 +15,15 @@ class CriarTabelaNotificacaoSistema extends Migration
     {
         Schema::create('notificacao_sistema', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
+            $table->string('nome',100);
             $table->string('descricao');
-            $table->integer('status');
-            $table->boolean('ativo');
+            $table->integer('status')->default(0);
+            $table->boolean('ativo')->default(1);
             $table->timestamps();
 
             $table->unsignedBigInteger('usuario_id');
             
-            $table->foreign('usuario_id')->references('id')->on('usuario')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('usuario_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

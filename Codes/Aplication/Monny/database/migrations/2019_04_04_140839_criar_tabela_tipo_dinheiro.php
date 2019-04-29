@@ -15,9 +15,9 @@ class CriarTabelaTipoDinheiro extends Migration
     {
         Schema::create('tipo_dinheiro', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
+            $table->string('nome',50);
             $table->string('sigla',10);
-            $table->boolean('ativo');
+            $table->boolean('ativo')->default(1);
             $table->timestamps();
         });
     }

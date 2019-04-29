@@ -15,8 +15,8 @@ class CriarTabelaSubCategoria extends Migration
     {
         Schema::create('sub_categoria', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
-            $table->boolean('ativo');
+            $table->string('nome',100);
+            $table->boolean('ativo')->default(1);
             $table->timestamps();
 
             $table->unsignedBigInteger('categoria_id');

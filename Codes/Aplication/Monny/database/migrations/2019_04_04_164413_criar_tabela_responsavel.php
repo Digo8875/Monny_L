@@ -15,8 +15,8 @@ class CriarTabelaResponsavel extends Migration
     {
         Schema::create('responsavel', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->boolean('ativo');
-            $table->string('nome');
+            $table->boolean('ativo')->default(1);
+            $table->string('nome',100);
             $table->string('descricao');
             $table->timestamps();
         });

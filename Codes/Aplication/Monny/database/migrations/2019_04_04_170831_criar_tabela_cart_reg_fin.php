@@ -15,7 +15,7 @@ class CriarTabelaCartRegFin extends Migration
     {
         Schema::create('cart_reg_fin', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->boolean('ativo');
+            $table->boolean('ativo')->default(1);
             $table->timestamps();
 
             $table->unsignedBigInteger('carteira_id');

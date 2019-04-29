@@ -15,8 +15,8 @@ class CriarTabelaAgendamentoParcelado extends Migration
     {
         Schema::create('agendamento_parcelado', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->boolean('ativo');
-            $table->integer('numero_parcelas');
+            $table->boolean('ativo')->default(1);
+            $table->integer('numero_parcelas')->default(1);
             $table->timestamps();
 
             $table->unsignedBigInteger('agendamento_financeiro_id');

@@ -17,7 +17,7 @@ class CriarTabelaObjetivo extends Migration
             $table->bigIncrements('id');
             $table->double('valor',12,2);
             $table->integer('tipo');
-            $table->boolean('ativo');
+            $table->boolean('ativo')->default(1);
             $table->timestamps();
 
             $table->unsignedBigInteger('carteira_id');
